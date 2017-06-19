@@ -1,0 +1,11 @@
+<md-grid-list [cols]="columns" rowHeight="100px">
+  <md-grid-tile
+      *ngFor="let widget of widgets"
+      [colspan]="widget.cols"
+      [rowspan]="widget.rows">
+    <div [ngSwitch]="widget.type">
+      <counter-widget    *ngSwitchCase="0" [widget]="widget"></counter-widget>
+      <percentage-widget *ngSwitchCase="1" [widget]="widget"></percentage-widget>
+    </div>
+  </md-grid-tile>
+</md-grid-list>

@@ -1,0 +1,9 @@
+#mat-dashboard-container {
+}
+.mat-grid-list {
+    background-color: #3e3e3e;
+}
+
+.mat-grid-tile .mat-figure {
+    display: block;
+}
