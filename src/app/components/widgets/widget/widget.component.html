@@ -1,0 +1,24 @@
+<md-sidenav-container>
+    <md-sidenav align="end" #configure>
+        <md-icon class="close-settings-icon" (click)="configure.close()">clear</md-icon>
+        <span>Number of rows</span>
+        <md-slider
+            max="8"
+            min="1"
+            step="auto"
+            thumb-label="true"
+            tick-interval="auto"
+            [value]="cols" (change)="updatedCols($event)">
+        </md-slider>
+        <span>Number of cols</span>
+        <md-slider
+            max="8"
+            min="1"
+            step="auto"
+            thumb-label="true"
+            tick-interval="auto"
+            [value]="rows" (change)="updatedRows($event)">
+        </md-slider>
+    </md-sidenav>
+    <ng-content></ng-content>
+</md-sidenav-container>

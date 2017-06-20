@@ -1,0 +1,36 @@
+.mat-card {
+    border-radius:0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4em;
+}
+.mat-sidenav {
+    padding: 15px;
+}
+
+.settings-icon {
+    position: absolute;
+    right: 2px;
+    bottom: 1px;
+    color: #e0e0e0;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+.close-settings-icon {
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    color: #e0e0e0;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.mat-sidenav-container {
+    overflow: hidden;
+}

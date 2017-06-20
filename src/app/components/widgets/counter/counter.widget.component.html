@@ -1,34 +1,15 @@
-<md-sidenav-container>
-    <md-sidenav align="end" #configure>
-        <p><button md-button (click)="configure.close()">Close</button></p>
-        <span>Number of rows</span>
-        <md-slider
-            max="8"
-            min="1"
-            step="auto"
-            thumb-label="true"
-            tick-interval="auto"
-            [value]="widget.cols" (change)="changedCols($event)">
-        </md-slider>
-        <span>Number of cols</span>
-        <md-slider
-            max="8"
-            min="1"
-            step="auto"
-            thumb-label="true"
-            tick-interval="auto"
-            [value]="widget.rows" (change)="changedRows($event)">
-        </md-slider>
-    </md-sidenav>
+<dash-widget #settings
+            [cols]="widget.cols"
+            [rows]="widget.rows"
+            (changedCols)="changedCols($event)" 
+            (changedRows)="changedRows($event)">
     <md-card>
+        <md-icon class="settings-icon" (click)="settings.open()">settings</md-icon>
         <md-card-header>
             <md-card-title>{{ widget.title }}</md-card-title>
         </md-card-header>
         <md-card-content>
             <h1 *ngIf="!editEnabled">{{ widget.count }}</h1>
         </md-card-content>
-        <md-card-actions>
-            <button md-button (click)="configure.open()">Edit</button>
-        </md-card-actions>
     </md-card>
-</md-sidenav-container>
+</dash-widget>

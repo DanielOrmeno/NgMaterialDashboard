@@ -6,6 +6,7 @@
     <div [ngSwitch]="widget.type">
       <counter-widget    *ngSwitchCase="0" [widget]="widget"></counter-widget>
       <percentage-widget *ngSwitchCase="1" [widget]="widget"></percentage-widget>
+      <graph-widget      *ngSwitchCase="2" [widget]="widget"></graph-widget>
     </div>
   </md-grid-tile>
 </md-grid-list>

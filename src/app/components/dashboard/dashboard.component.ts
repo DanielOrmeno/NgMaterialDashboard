@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IWidget } from '../../classes/module';
-import { CounterWidget, PercentageWidget } from '../../classes/widgets';
+import { CounterWidget, PercentageWidget, GraphWidget } from '../../classes/widgets';
 
 @Component({
   selector: 'mat-dash',
@@ -16,11 +16,11 @@ export class DashboardComponent implements OnInit {
         this.columns = 8;
         this.widgets = [
             new CounterWidget(),
-            new CounterWidget(),
             new PercentageWidget(),
-            // new CounterWidget(),
-            // new PercentageWidget(),
-            // new PercentageWidget(4, 2),
+            new GraphWidget(),
+            new PercentageWidget(),
+            new CounterWidget(),
+            new GraphWidget(),
         ];
     }
 }

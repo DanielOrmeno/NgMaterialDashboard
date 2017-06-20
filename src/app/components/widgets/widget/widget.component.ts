@@ -1,28 +1,39 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Widget } from '../../../classes/module';
+import { Component, OnInit, Output, Input, EventEmitter, ViewChild } from '@angular/core';
 
-export abstract class BaseWidget<T extends Widget> implements OnInit {
-  @Input()
-  widget: T;
-  @Input()
-  title: string;
-  @Input()
-  editEnabled: boolean;
+@Component({
+  selector: 'dash-widget',
+  templateUrl: './widget.component.html',
+  styleUrls: [ './widget.component.css' ]
+})
+export class WidgetComponent implements OnInit {
 
-  loading: boolean;
+    @Input()
+    cols: number;
+    @Input()
+    rows: number;
 
-  ngOnInit() {
-    this.loading = false;
-    this.editEnabled = false;
-  }
+    @Output()
+    changeCols: EventEmitter<number>;
+    @Output()
+    changeRows: EventEmitter<number>;
 
-  changedCols($event) {
-    console.log($event);
-    this.widget.cols = $event.value;
-  }
+    @ViewChild('configure')
+    configure: any;
 
-  changedRows($event) {
-    console.log($event);
-    this.widget.rows = $event.value;
-  }
+    ngOnInit() {
+        this.changeCols = new EventEmitter();
+        this.changeRows = new EventEmitter();
+    }
+
+    updatedCols($event) {
+        this.changeCols.emit($event.value);
+    }
+
+    updatedRows($event) {
+        this.changeRows.emit($event.value);
+    }
+
+    open() {
+        this.configure.open();
+    }
 }
