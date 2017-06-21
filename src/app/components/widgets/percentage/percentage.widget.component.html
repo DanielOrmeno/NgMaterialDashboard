@@ -1,8 +1,8 @@
 <dash-widget #settings
             [cols]="widget.cols"
             [rows]="widget.rows"
-            (changedCols)="changedCols($event)" 
-            (changedRows)="changedRows($event)">
+            (changeCols)="updateCols($event)" 
+            (changeRows)="updateRows($event)">
     <md-card>
         <md-icon class="settings-icon" (click)="settings.open()">settings</md-icon>
         <md-card-header>
@@ -15,4 +15,5 @@
             </md-progress-spinner>
         </md-card-content>
     </md-card>
+    <md-progress-bar *ngIf="loading" mode="indeterminate"></md-progress-bar>
 </dash-widget>

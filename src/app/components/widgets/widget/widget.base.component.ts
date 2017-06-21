@@ -1,26 +1,25 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import { Widget } from '../../../classes/module';
 
-export abstract class BaseWidget<T extends Widget> implements OnInit {
+export abstract class BaseWidget<T extends Widget> {
+
   @Input()
   widget: T;
   @Input()
   title: string;
-  @Input()
-  editEnabled: boolean;
 
-  loading: boolean;
+  loading = false;
 
-  ngOnInit() {
-    this.loading = false;
-    this.editEnabled = false;
-  }
-
-  changedCols($event: number) {
+  updateCols($event) {
     this.widget.cols = $event;
   }
 
-  changedRows($event: number) {
+  updateRows($event) {
     this.widget.rows = $event;
+  }
+
+  async refresh(): Promise<any> {
+    return this.widget.refresh().toPromise();
   }
 }

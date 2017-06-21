@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IWidget } from '../../classes/module';
 import { CounterWidget, PercentageWidget, GraphWidget } from '../../classes/widgets';
-
+import { MockService } from '../../services/mock.service';
 @Component({
   selector: 'mat-dash',
   templateUrl: './dashboard.component.html',
@@ -12,15 +12,17 @@ export class DashboardComponent implements OnInit {
     columns: number;
     widgets: IWidget[];
 
+    constructor(private mockService: MockService) {}
+
     ngOnInit() {
         this.columns = 8;
         this.widgets = [
-            new CounterWidget(),
-            new PercentageWidget(),
-            new GraphWidget(),
-            new PercentageWidget(),
-            new CounterWidget(),
-            new GraphWidget(),
+            new CounterWidget(this.mockService.counterProvider),
+            new PercentageWidget(this.mockService.percentageProvider),
+            new GraphWidget(null),
+            new PercentageWidget(this.mockService.percentageProvider1),
+            new CounterWidget(this.mockService.counterProvider1),
+            new GraphWidget(null),
         ];
     }
 }

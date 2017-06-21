@@ -8,8 +8,19 @@ import { BaseWidget } from '../widget/widget.base.component';
   styleUrls: ['./counter.widget.component.css', '../widget/widget.component.css']
 })
 export class CounterWidgetComponent extends BaseWidget<CounterWidget> implements OnInit {
-  ngOnInit() {
+
+  async ngOnInit() {
     this.widget.title = 'Number of Jobs';
-    this.widget.count = 255;
+
+    this.loading = true;
+    const count = await this.refresh();
+
+    const interval = setInterval(() => {
+      this.widget.count++;
+      if (this.widget.count === count) {
+        clearInterval(interval);
+      }
+    }, 10);
+    this.loading = false;
   }
 }

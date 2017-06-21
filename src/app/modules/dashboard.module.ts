@@ -4,6 +4,7 @@ import { MaterialModule } from '@angular/material'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { WidgetsModule } from './widgets.module';
 import { DashboardComponent } from '../components/dashboard/dashboard.component';
+import { MockService } from '../services/mock.service';
 
 @NgModule({
   imports: [
@@ -18,6 +19,8 @@ import { DashboardComponent } from '../components/dashboard/dashboard.component'
   exports: [
       DashboardComponent
   ],
-  providers: []
+  providers: [
+    MockService
+  ]
 })
 export class DashboardModule { }

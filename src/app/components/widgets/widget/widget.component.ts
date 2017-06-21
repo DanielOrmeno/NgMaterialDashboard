@@ -5,7 +5,10 @@ import { Component, OnInit, Output, Input, EventEmitter, ViewChild } from '@angu
   templateUrl: './widget.component.html',
   styleUrls: [ './widget.component.css' ]
 })
-export class WidgetComponent implements OnInit {
+export class WidgetComponent {
+
+    @ViewChild('configure')
+    configure: any;
 
     @Input()
     cols: number;
@@ -13,25 +16,9 @@ export class WidgetComponent implements OnInit {
     rows: number;
 
     @Output()
-    changeCols: EventEmitter<number>;
+    changeCols: EventEmitter<number> = new EventEmitter();
     @Output()
-    changeRows: EventEmitter<number>;
-
-    @ViewChild('configure')
-    configure: any;
-
-    ngOnInit() {
-        this.changeCols = new EventEmitter();
-        this.changeRows = new EventEmitter();
-    }
-
-    updatedCols($event) {
-        this.changeCols.emit($event.value);
-    }
-
-    updatedRows($event) {
-        this.changeRows.emit($event.value);
-    }
+    changeRows: EventEmitter<number> = new EventEmitter();
 
     open() {
         this.configure.open();

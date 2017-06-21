@@ -8,7 +8,7 @@
             step="auto"
             thumb-label="true"
             tick-interval="auto"
-            [value]="cols" (change)="updatedCols($event)">
+            [value]="cols" (change)="changeCols.emit($event.value)">
         </md-slider>
         <span>Number of cols</span>
         <md-slider
@@ -17,7 +17,7 @@
             step="auto"
             thumb-label="true"
             tick-interval="auto"
-            [value]="rows" (change)="updatedRows($event)">
+            [value]="rows" (change)="changeRows.emit($event.value)">
         </md-slider>
     </md-sidenav>
     <ng-content></ng-content>
