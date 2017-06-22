@@ -2,9 +2,11 @@
             [cols]="widget.cols"
             [rows]="widget.rows"
             (changeCols)="updateCols($event)" 
-            (changeRows)="updateRows($event)">
+            (changeRows)="updateRows($event)"
+            (refreshState)="autoRefresh=$event">
     <md-card>
         <md-icon class="settings-icon" (click)="settings.open()">settings</md-icon>
+        <md-icon *ngIf="!autoRefresh" class="refresh-icon" (click)="refreshCounter()">refresh</md-icon>
         <md-card-header>
             <md-card-title>{{ widget.title }}</md-card-title>
         </md-card-header>

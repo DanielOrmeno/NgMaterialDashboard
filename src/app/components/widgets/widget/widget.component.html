@@ -19,6 +19,14 @@
             tick-interval="auto"
             [value]="rows" (change)="changeRows.emit($event.value)">
         </md-slider>
+        <md-slide-toggle (change)="autoRefreshChange($event)">Auto Refresh</md-slide-toggle>
+        <md-radio-group *ngIf="autoRefresh">
+            <md-radio-button *ngFor="let interval of refreshIntervals" 
+                             [value]="interval" 
+                             [checked]="interval === 90">
+                {{interval}}s
+            </md-radio-button>
+        </md-radio-group>
     </md-sidenav>
     <ng-content></ng-content>
 </md-sidenav-container>

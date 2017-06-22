@@ -19,10 +19,9 @@ export class DashboardComponent implements OnInit {
         this.widgets = [
             new CounterWidget(this.mockService.counterProvider),
             new PercentageWidget(this.mockService.percentageProvider),
-            new GraphWidget(null),
+            new GraphWidget(this.mockService.percentageProvider),
             new PercentageWidget(this.mockService.percentageProvider1),
-            new CounterWidget(this.mockService.counterProvider1),
-            new GraphWidget(null),
+            new CounterWidget(this.mockService.counterProvider1)
         ];
     }
 }

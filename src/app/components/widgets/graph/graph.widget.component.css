@@ -1,3 +1,32 @@
-.mat-sidenav-container {
+#dash-graph-widget .mat-sidenav-container {
     max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#dash-graph-widget .mat-card {
+    width: 100%;
+}
+
+#dash-graph-widget .chart-container {
+    /*min-width: 500px;
+    min-height: 175px;
+    background-color: white;
+    position: relative;*/
+    background-color: white;
+    position: relative;
+    margin: auto;
+    min-height: 175px;
+    min-width: 500px;
+}
+#dash-graph-widget .mat-sidenav-content {
+    overflow: hidden;
+}
+
+#dash-graph-widget #mockChart {
+    display: block;
+    max-width: 90%;
+    max-height: 75%;
+    margin-left: auto;
+    margin-right: auto;
 }
