@@ -1,9 +1,9 @@
-<md-grid-list [cols]="columns" rowHeight="100px">
+<md-grid-list [cols]="columns" rowHeight="200px">
   <md-grid-tile
       *ngFor="let widget of widgets"
       [colspan]="widget.cols"
       [rowspan]="widget.rows">
-    <div [ngSwitch]="widget.type">
+    <div [ngSwitch]="widget.type" class="widget">
       <counter-widget    *ngSwitchCase="0" [widget]="widget"></counter-widget>
       <percentage-widget *ngSwitchCase="1" [widget]="widget"></percentage-widget>
       <graph-widget      *ngSwitchCase="2" [widget]="widget"></graph-widget>

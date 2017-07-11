@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
     constructor(private mockService: MockService) {}
 
     ngOnInit() {
-        this.columns = 8;
+        this.columns = 6;
         this.widgets = [
             new CounterWidget(this.mockService.counterProvider),
             new PercentageWidget(this.mockService.percentageProvider),

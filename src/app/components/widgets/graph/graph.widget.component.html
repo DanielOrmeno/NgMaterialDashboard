@@ -4,20 +4,15 @@
             [rows]="widget.rows"
             (changeCols)="updateCols($event)" 
             (changeRows)="updateRows($event)">
-        <!--<md-card>
+        <md-card>
             <md-icon class="settings-icon" (click)="settings.open()">settings</md-icon>
-            <md-icon class="refresh-icon" (click)="refresh()">refresh</md-icon>
-            <md-card-header>
+            <md-icon *ngIf="!autoRefresh" class="refresh-icon" (click)="refreshCounter()">refresh</md-icon>
+            <!--<md-card-header>
                 <md-card-title>{{ widget.title }}</md-card-title>
-            </md-card-header>
+            </md-card-header>-->
             <md-card-content>
-                <canvas id="mockChart" width="200"></canvas>
+                <canvas id="mockChart"></canvas>
             </md-card-content>
-        </md-card>-->
-        <md-icon class="settings-icon" (click)="settings.open()">settings</md-icon>
-        <md-icon class="refresh-icon" (click)="refresh()">refresh</md-icon>
-        <div class="chart-container">
-            <canvas id="mockChart"></canvas>
-        </div>
+        </md-card>
     </dash-widget>
 </div>
