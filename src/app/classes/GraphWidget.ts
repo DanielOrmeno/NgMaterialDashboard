@@ -6,7 +6,7 @@ export class GraphWidget extends Widget {
 
     title: string;
 
-    constructor(provider: () => Observable<any>, cols: number = 3, rows: number = 1) {
+    constructor(provider: () => Observable<any>, cols: number = 3, rows: number = 2) {
         super(WidgetType.Graph, provider, cols, rows);
     }
 }

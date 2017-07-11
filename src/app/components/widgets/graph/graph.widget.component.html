@@ -1,3 +1,4 @@
+<md-toolbar color="primary">{{ widget.title }}</md-toolbar>
 <div id="dash-graph-widget">
     <dash-widget #settings
             [cols]="widget.cols"
@@ -7,9 +8,6 @@
         <md-card>
             <md-icon class="settings-icon" (click)="settings.open()">settings</md-icon>
             <md-icon *ngIf="!autoRefresh" class="refresh-icon" (click)="refreshCounter()">refresh</md-icon>
-            <!--<md-card-header>
-                <md-card-title>{{ widget.title }}</md-card-title>
-            </md-card-header>-->
             <md-card-content>
                 <canvas id="mockChart"></canvas>
             </md-card-content>

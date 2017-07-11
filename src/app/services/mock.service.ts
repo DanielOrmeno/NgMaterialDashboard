@@ -17,6 +17,6 @@ export class MockService {
     }
 
     percentageProvider1(): Observable<any> {
-        return Observable.of(75);
+        return Observable.of(100);
     }
 }

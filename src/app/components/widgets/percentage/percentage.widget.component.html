@@ -1,3 +1,4 @@
+<md-toolbar color="primary">{{ widget.title }}</md-toolbar>
 <dash-widget #settings
             [cols]="widget.cols"
             [rows]="widget.rows"
@@ -6,14 +7,12 @@
     <md-card>
         <md-icon class="settings-icon" (click)="settings.open()">settings</md-icon>
         <md-icon class="refresh-icon" (click)="refresh()">refresh</md-icon>
-        <md-card-header>
-            <md-card-title>{{widget.title}}</md-card-title>
-        </md-card-header>
         <md-card-content>
             <md-progress-spinner
                 mode="determinate"
                 [value]="widget.percentage">
             </md-progress-spinner>
+        <span class="spinner-value">{{widget.percentage}}%</span>
         </md-card-content>
     </md-card>
     <md-progress-bar *ngIf="loading" mode="indeterminate"></md-progress-bar>

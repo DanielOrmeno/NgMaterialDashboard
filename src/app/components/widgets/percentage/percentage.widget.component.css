@@ -3,3 +3,15 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.mat-progress-spinner {
+    margin: 0 auto;
+}
+
+.spinner-value {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    left: 0;
+    font-size: 1.9em;
+    text-align: center;
+}
