@@ -1,32 +1,45 @@
 <md-sidenav-container>
     <md-sidenav align="end" #configure>
         <md-icon class="close-settings-icon" (click)="configure.close()">clear</md-icon>
-        <span>Number of rows</span>
-        <md-slider
-            max="8"
-            min="1"
-            step="auto"
-            thumb-label="true"
-            tick-interval="auto"
-            [value]="cols" (change)="changeCols.emit($event.value)">
-        </md-slider>
-        <span>Number of cols</span>
-        <md-slider
-            max="8"
-            min="1"
-            step="auto"
-            thumb-label="true"
-            tick-interval="auto"
-            [value]="rows" (change)="changeRows.emit($event.value)">
-        </md-slider>
-        <md-slide-toggle (change)="autoRefreshChange($event)">Auto Refresh</md-slide-toggle>
-        <md-radio-group *ngIf="autoRefresh">
-            <md-radio-button *ngFor="let interval of refreshIntervals" 
-                             [value]="interval" 
-                             [checked]="interval === 90">
-                {{interval}}s
-            </md-radio-button>
-        </md-radio-group>
+        <md-list>
+            <md-list-item>
+                Number of rows
+            </md-list-item>
+            <md-list-item>
+                <md-slider
+                    max="8"
+                    min="1"
+                    step="auto"
+                    thumb-label="true"
+                    tick-interval="auto"
+                    [value]="cols" (change)="changeCols.emit($event.value)">
+                </md-slider>
+            </md-list-item>
+            <md-list-item>
+                Number of cols
+            </md-list-item>
+            <md-list-item>
+                <md-slider
+                    max="8"
+                    min="1"
+                    step="auto"
+                    thumb-label="true"
+                    tick-interval="auto"
+                    [value]="rows" (change)="changeRows.emit($event.value)">
+                </md-slider>
+            </md-list-item>
+            <md-list-item>
+                <md-slide-toggle (change)="autoRefreshChange($event)">Auto Refresh</md-slide-toggle>
+            </md-list-item>
+                <md-radio-group *ngIf="autoRefresh" class="vertical-radio-group">
+                    <md-radio-button class="interval-radio" 
+                                    *ngFor="let interval of refreshIntervals" 
+                                    [value]="interval" 
+                                    [checked]="interval === 90">
+                        {{interval}} s
+                    </md-radio-button>
+                </md-radio-group>
+        </md-list>
     </md-sidenav>
     <ng-content></ng-content>
 </md-sidenav-container>

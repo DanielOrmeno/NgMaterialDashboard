@@ -70,3 +70,11 @@
     height: 30px;
     font-size: 15px;
 }
+.vertical-radio-group {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 0 16px;
+}
+.interval-radio {
+    margin: 5px;
+}

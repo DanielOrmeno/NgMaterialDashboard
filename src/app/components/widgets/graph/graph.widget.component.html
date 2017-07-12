@@ -9,7 +9,7 @@
             <md-icon class="settings-icon" (click)="settings.open()">settings</md-icon>
             <md-icon *ngIf="!autoRefresh" class="refresh-icon" (click)="refreshCounter()">refresh</md-icon>
             <md-card-content>
-                <canvas id="mockChart"></canvas>
+                <canvas [attr.id]="chartId"></canvas>
             </md-card-content>
         </md-card>
     </dash-widget>
