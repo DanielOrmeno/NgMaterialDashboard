@@ -18,8 +18,29 @@ export class GraphWidgetComponent extends BaseWidget<GraphWidget> implements OnI
 
   ngAfterViewInit() {
     const ctx = document.getElementById(this.chartId);
+    // const chart = new Chart(ctx, {
+    //     type: 'line',
+    //     data: {
+    //         datasets: [
+    //             {x: 0, y: 5, fill: 'origin'},      // 0: fill to 'origin'
+    //             {x: 0, y: 5, fill: '+2'},          // 1: fill to dataset 3
+    //             {x: 0, y: 5, fill: 1},             // 2: fill to dataset 1
+    //             {x: 0, y: 5, fill: false},         // 3: no fill
+    //             {x: 0, y: 5, fill: '-2'}           // 4: fill to dataset 2
+    //         ]
+    //     },
+    //     options: {
+    //         scales: {
+    //             yAxes: [{
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }]
+    //         }
+    //     }
+    // });
     const myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: {
             labels: [ 'Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange' ],
             datasets: [{
